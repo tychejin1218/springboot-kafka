@@ -23,8 +23,16 @@ class KafkaProducerServiceTest {
 
     String topic = kafkaProducerProperties.getTopic();
     String data = "Hello Kafka!";
-    for (int a = 0; a < 1000; a++) {
+
+    long startTime = System.currentTimeMillis();
+    log.info("Start Time={}", startTime);
+
+    for (int a = 0; a < 10000; a++) {
       kafkaProducerService.sendData(topic, data);
     }
+
+    long currentTime = System.currentTimeMillis();
+    log.info("End Time={}", currentTime);
+    log.info("Time Taken={}", (currentTime - startTime) / 1000);
   }
 }
