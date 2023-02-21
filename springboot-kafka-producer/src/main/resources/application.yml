@@ -2,7 +2,6 @@
 server:
   port: 8081
 
-
 # Kafka Producer 설정 - https://kafka:apache:org/documentation/#producerconfigs
 kafka:
   topic: topic-sample
