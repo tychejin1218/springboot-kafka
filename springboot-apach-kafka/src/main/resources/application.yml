@@ -1,0 +1,22 @@
+# Sever ??
+server:
+  port: 8081
+
+# Kafka Producer ?? - https://kafka:apache:org/documentation/#producerconfigs
+kafka:
+  topic: topic-sample
+  producer:
+    bootstrap-servers:
+      localhost:9092
+      ,localhost:9093
+      ,localhost:9094
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    ack-config: all
+    security-protocol-config: PLAINTEXT
+    sasl-mechanism:
+    username:
+    password:
+    client-id: client-sample
+
+
