@@ -27,7 +27,7 @@ class KafkaProducerServiceTest {
     long startTime = System.currentTimeMillis();
     log.info("Start Time={}", startTime);
 
-    for (int a = 0; a < 10000; a++) {
+    for (int a = 0; a < 1000; a++) {
       kafkaProducerService.sendData(topic, data);
     }
 

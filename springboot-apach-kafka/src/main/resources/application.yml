@@ -12,7 +12,7 @@ kafka:
       ,localhost:9094
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
     value-serializer: org.apache.kafka.common.serialization.StringSerializer
-    ack-config: all
+    ack-config: 1
     security-protocol-config: PLAINTEXT
     sasl-mechanism:
     username:
