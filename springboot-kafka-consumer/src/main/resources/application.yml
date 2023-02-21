@@ -1,1 +1,28 @@
+# Sever 설정
+server:
+  port: 8082
+
+# Kafka Producer 설정 - https://kafka.apache.org/documentation/#consumerapi
+kafka:
+  topic: topic-sample
+  consumer:
+    bootstrap-servers:
+      localhost:9092
+      ,localhost:9093
+      ,localhost:9094
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    enable-auto-commit-config: false
+    auto-offset-reset-config: latest
+    allow-auto-create-topics: false
+    client-id: client-sample
+    group-id: group-sample
+    security-protocol-config: PLAINTEXT
+    sasl-mechanism:
+    username:
+    password:
+    ack-mode: MANUAL_IMMEDIATE
+    poll-timeout: 5000
+    concurrency: 5
+
 
