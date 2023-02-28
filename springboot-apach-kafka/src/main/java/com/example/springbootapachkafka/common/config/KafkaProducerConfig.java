@@ -18,7 +18,7 @@ public class KafkaProducerConfig {
   private final KafkaProducerProperties kafkaProducerProperties;
 
   @Bean
-  public KafkaProducer<String, String> kafkaProducer() {
+  public KafkaProducer<String, String> kafkaProducerBean() {
 
     Properties props = new Properties();
     props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
@@ -27,7 +27,7 @@ public class KafkaProducerConfig {
         kafkaProducerProperties.getKeySerializer());
     props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
         kafkaProducerProperties.getValueSerializer());
-    props.put(ProducerConfig.ACKS_CONFIG, "-1");
+    props.put(ProducerConfig.ACKS_CONFIG, kafkaProducerProperties.getAckConfig());
     props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG,
         kafkaProducerProperties.getSecurityProtocolConfig());
 
